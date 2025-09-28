@@ -11,6 +11,7 @@ import {
   Facebook,
   MessageCircle,
   Send,
+  X,
 } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import emailjs from "@emailjs/browser";
@@ -83,11 +84,20 @@ export function ContactSection() {
 
             <div className="flex items-center justify-center gap-4 py-4">
               {[
-                { href: "https://facebook.com", icon: Facebook },
-                { href: "https://linkedin.com", icon: Linkedin },
-                { href: "https://github.com", icon: Github },
-                { href: "https://twitter.com", icon: Twitter },
-                { href: "https://discord.com", icon: MessageCircle },
+                {
+                  href: "https://www.facebook.com/share/1S9gSBemtQ/?mibextid=wwXIfr",
+                  icon: Facebook,
+                },
+                {
+                  href: "https://www.linkedin.com/in/charith-harsha-jayashan/",
+                  icon: Linkedin,
+                },
+                { href: "https://github.com/Charithharsha08", icon: Github },
+                { href: "https://x.com/charith_harsha8?s=21", icon: X },
+                {
+                  href: "https://discord.com/users/Charithharsha08",
+                  icon: MessageCircle,
+                },
               ].map(({ href, icon: Icon }, index) => (
                 <a
                   key={href}
