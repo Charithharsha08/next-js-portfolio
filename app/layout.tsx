@@ -7,6 +7,7 @@ import { Suspense } from "react"
 import { ThemeProvider } from "@/contexts/theme-context"
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
+import Script from "next/script"
 
 export const metadata: Metadata = {
   title: "Charith Harsha - Software Engineer",
@@ -67,6 +68,30 @@ export default function RootLayout({
         </ThemeProvider>
         <Analytics />
         <Toaster />
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Charith Harsha Jayashan",
+              jobTitle: "Software Engineer",
+              url: "https://charithharsha.com",
+              image: "https://charithharsha.com/charith-harsha-jayashan.jpg", 
+              sameAs: [
+                "https://github.com/charithharsha08", 
+                "https://www.linkedin.com/in/charith-harsha-jayashan/", 
+                "https://x.com/charith_harsha8?s=21",
+              ],
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Galle",
+                addressCountry: "Sri Lanka",
+              },
+            }),
+          }}
+        />
       </body>
     </html>
   );
